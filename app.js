@@ -49,7 +49,7 @@ const renderBookStats = () => {
   bookStatsEl.textContent = `${totalBooks} books, ${totalPages} pages total`;
 };
 
-// Build books list (DOM)
+// Build books list
 const buildBooksList = (booksArray) => {
   bookListContainer.replaceChildren();
 
@@ -63,7 +63,7 @@ const buildBooksList = (booksArray) => {
       <button data-id="${id}" class="del">Delete</button>
     `;
 
-    // Wire up buttons
+    // Setup buttons
     div
       .querySelector(".del")
       .addEventListener("click", () => deleteBookButton(id));

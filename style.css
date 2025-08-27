@@ -1,0 +1,143 @@
+:root {
+  --bgcolor: #f8f8ff;
+  --txtcolor: #333333;
+  --offcolor: #e0e0e0;
+  --hsize: 3em;
+  --tsize: 1em;
+  font-size: 16px;
+  --font: "Quicksand", sans-serif;
+  --hfont: "Fredoka", sans-serif;
+  --concolor: rgba(0, 123, 255, 0.8);
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--bgcolor);
+  color: var(--txtcolor);
+  font-family: var(--font);
+}
+
+body {
+  margin: 0;
+  padding: 0 10px;
+  width: calc(100vw - 10px);
+  min-height: 100vh;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--hfont);
+  font-size: var(--hsize);
+  margin: 2rem 0;
+}
+
+/* Book Form */
+#book-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+  border: 2px solid var(--offcolor);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+#book-form input,
+#book-form select,
+#book-form button {
+  font-family: var(--font);
+  font-size: 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--offcolor);
+  border-radius: 6px;
+}
+
+#book-form button {
+  background-color: var(--concolor);
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Filters */
+#filter-favorites,
+#sort-by {
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid var(--offcolor);
+  border-radius: 6px;
+}
+
+/* Stats */
+#stats {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+/* Book List */
+#book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.book {
+  background-color: white;
+  border: 2px solid var(--offcolor);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.book.favorite {
+  border-color: var(--concolor);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Book Buttons */
+.book button {
+  font-family: var(--font);
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.book .fav {
+  background-color: var(--concolor);
+  color: white;
+}
+
+.book .del {
+  background-color: var(--offcolor);
+  color: var(--txtcolor);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #book-form {
+    flex-direction: column;
+  }
+
+  #book-list {
+    grid-template-columns: 1fr;
+  }
+}
